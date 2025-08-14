@@ -1,0 +1,47 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls;assembly=Content.Client"
+    Title="{Loc 'fillable-form-ui-window'}"
+    MinSize="500 250">
+    <BoxContainer Orientation="Vertical"
+        SeparationOverride="2"
+        VerticalExpand="True">
+
+        <!-- Search/Filter Controls -->
+        <PanelContainer StyleClasses="PanelBackgroundBaseDark"
+            HorizontalExpand="True" Margin="0 10 0 0"
+            VerticalExpand="True" VerticalAlignment="Bottom">
+            <BoxContainer Orientation="Vertical"
+                VerticalExpand="True">
+
+                <!-- Box Section Header -->
+                <BoxContainer Orientation="Vertical">
+
+                    <Label Text="{Loc 'fillable-form-ui-search-filter-options'}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"/>
+
+                </BoxContainer>
+
+                <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+
+                <!-- Filename Search Options -->
+                <BoxContainer Orientation="Horizontal" Margin="2">
+
+                    <Label Name="FormSearchLabel"
+                        Text="{Loc 'fillable-form-ui-search-by-name-label'}"
+                        MinWidth="150"/>
+                    <Control MinWidth="5"/>
+                    <LineEdit Name="FormSearchLine"
+                        PlaceHolder="{Loc 'fillable-form-ui-search-by-name-line'}"
+                        HorizontalExpand="True"/>
+
+                </BoxContainer>
+
+            </BoxContainer>
+        </PanelContainer>
+
+
+    </BoxContainer>
+</DefaultWindow>
