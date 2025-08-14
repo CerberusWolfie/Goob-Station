@@ -10,8 +10,8 @@
 
         <!-- Search/Filter Controls -->
         <PanelContainer StyleClasses="PanelBackgroundBaseDark"
-            HorizontalExpand="True" Margin="0 10 0 0"
-            VerticalExpand="True" VerticalAlignment="Bottom">
+            HorizontalExpand="True" Margin="0 0 0 5"
+            VerticalExpand="True" VerticalAlignment="Top">
             <BoxContainer Orientation="Vertical"
                 VerticalExpand="True">
 

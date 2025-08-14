@@ -13,6 +13,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.IO;
+using Content.Client._Goobstation.FillableForm.UI;
 using Content.Shared.Fax;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
@@ -26,6 +27,12 @@ public sealed class FaxBoundUi : BoundUserInterface
 
     [ViewVariables]
     private FaxWindow? _window;
+
+    /// <summary>
+    ///     This is a separate pop-up window for individual printable form papers.
+    /// </summary>
+    [ViewVariables]
+    private FillableFormWindow? _formWindow; // Goob Edit - Premade Papers
 
     private bool _dialogIsOpen = false;
 
@@ -43,7 +50,14 @@ public sealed class FaxBoundUi : BoundUserInterface
         _window.SendButtonPressed += OnSendButtonPressed;
         _window.RefreshButtonPressed += OnRefreshButtonPressed;
         _window.PeerSelected += OnPeerSelected;
-        _window.PrintPremadeButtonPressed += OnPrintPremadeButtonPressed; // Goob Edit - Premade Prints
+
+        // Goob Edit - Premade Papers begin
+        _formWindow = new FillableFormWindow();
+
+        _window.PrintPremadeButtonPressed += () =>
+        {
+            _formWindow.OpenCentered();
+        };
     }
 
     private async void OnFileButtonPressed()

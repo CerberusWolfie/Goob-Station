@@ -40,7 +40,7 @@ public sealed partial class FaxWindow : DefaultWindow
         CopyButton.OnPressed += _ => CopyButtonPressed?.Invoke();
         SendButton.OnPressed += _ => SendButtonPressed?.Invoke();
         RefreshButton.OnPressed += _ => RefreshButtonPressed?.Invoke();
-        PrintPremadeButtonPressed.OnPressed += _ => PrintPremadeButtonPressed?.Invoke(); // Goob Edit - Premade Papers
+        PrintPremadeButton.OnPressed += _ => PrintPremadeButtonPressed?.Invoke(); // Goob Edit - Premade Papers
         PeerSelector.OnItemSelected += args =>
             PeerSelected?.Invoke((string)args.Button.GetItemMetadata(args.Id)!);
     }
