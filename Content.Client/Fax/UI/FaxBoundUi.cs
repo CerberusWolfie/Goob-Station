@@ -43,6 +43,7 @@ public sealed class FaxBoundUi : BoundUserInterface
         _window.SendButtonPressed += OnSendButtonPressed;
         _window.RefreshButtonPressed += OnRefreshButtonPressed;
         _window.PeerSelected += OnPeerSelected;
+        _window.PrintPremadeButtonPressed += OnPrintPremadeButtonPressed; // Goob Edit - Premade Prints
     }
 
     private async void OnFileButtonPressed()

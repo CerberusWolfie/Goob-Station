@@ -112,5 +112,38 @@
             </BoxContainer>
         </PanelContainer>
 
+        <!-- Goob Edit - Custom Prints begin -->
+        <PanelContainer StyleClasses="PanelBackgroundBaseDark"
+            HorizontalExpand="True" Margin="0 10 0 0"
+            VerticalExpand="True" VerticalAlignment="Bottom">
+            <BoxContainer Orientation="Vertical"
+                VerticalExpand="True">
+
+                <!-- Box Section Header -->
+                <BoxContainer Orientation="Vertical">
+
+                    <Label Text="{Loc 'fax-machine-ui-automated-section-header'}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"/>
+
+                </BoxContainer>
+
+                <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+
+                <!-- Semi-Automated Options -->
+                <BoxContainer Margin="0 4 0 4">
+
+                    <!-- Button for opening different window. -->
+                    <Button Name="PrintPremadeButton"
+                        Text="{Loc 'fax-machine-ui-print-fillable-form-button'}"
+                        HorizontalExpand="True"/>
+
+                </BoxContainer>
+
+                <!-- TODO Potential CC-specific button for CC forms? -->
+            </BoxContainer>
+        </PanelContainer>
+        <!-- Goob Edit - Custom Prints end -->
+
     </BoxContainer>
 </DefaultWindow>

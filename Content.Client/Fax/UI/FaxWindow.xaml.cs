@@ -24,6 +24,7 @@ public sealed partial class FaxWindow : DefaultWindow
     public event Action? CopyButtonPressed;
     public event Action? SendButtonPressed;
     public event Action? RefreshButtonPressed;
+    public event Action? PrintPremadeButtonPressed; // Goob Edit - Premade Papers
     public event Action<string>? PeerSelected;
 
     public bool OfficePaper = false;
@@ -39,8 +40,9 @@ public sealed partial class FaxWindow : DefaultWindow
         CopyButton.OnPressed += _ => CopyButtonPressed?.Invoke();
         SendButton.OnPressed += _ => SendButtonPressed?.Invoke();
         RefreshButton.OnPressed += _ => RefreshButtonPressed?.Invoke();
+        PrintPremadeButtonPressed.OnPressed += _ => PrintPremadeButtonPressed?.Invoke(); // Goob Edit - Premade Papers
         PeerSelector.OnItemSelected += args =>
-            PeerSelected?.Invoke((string) args.Button.GetItemMetadata(args.Id)!);
+            PeerSelected?.Invoke((string)args.Button.GetItemMetadata(args.Id)!);
     }
 
     public void UpdateState(FaxUiState state)
@@ -103,7 +105,7 @@ public sealed partial class FaxWindow : DefaultWindow
     {
         OfficePaper = !OfficePaper;
 
-        if(OfficePaper)
+        if (OfficePaper)
             PaperButton.Text = Loc.GetString("fax-machine-ui-paper-button-office");
         else
             PaperButton.Text = Loc.GetString("fax-machine-ui-paper-button-normal");
